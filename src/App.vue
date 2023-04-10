@@ -1,10 +1,9 @@
 <template>
     <div class="formulario">
-        <div>
+      <form @submit.prevent="enviarFormulario">     
+        
+          <h1>Formulário de Cadastro</h1>
 
-            <h1>Formulário de Cadastro</h1>
-
-        <form @submit.prevent="submitForm">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" v-model="nome">
             <label for="dataNascimento">Data de Nascimento:</label>
@@ -60,11 +59,15 @@
         </form>
     
         <div v-if="formularioEnviado" class="div-informacoes">
-            <h2>Informações preenchidas:</h2>
-            <p><strong>Nome:</strong> {{ nome }}</p>
-        </div>
-        </div>
+      <h2>Informações preenchidas:</h2>
+      <p><strong>Nome:</strong> {{ nome }}</p>
+      <p><strong>Data de Nascimento:</strong> {{ dataNascimento }}</p>
+      <p><strong>E-mail:</strong> {{ email }}</p>
+      <p><strong>senha:</strong> {{ senha }}</p>
+      <p><strong>Endereço:</strong> {{ endereco }}</p>
+      
     </div>
+      </div>
 </template>
 
 <script>export default {
@@ -79,7 +82,6 @@
         complemento: '',
         cidade: '',
         estado: '',
-        formularioEnviado: false
         }
       };
     },
@@ -95,6 +97,15 @@
 .formulario {
   width: 400px;
   margin: 0 auto;
+}
+
+form{
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #d6d8db;
+  border-radius: 4px;
+  
 }
 
 h2 {
@@ -127,5 +138,21 @@ button[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.div-informacoes {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #d6d8db;
+  border-radius: 4px;
+}
+
+.div-informacoes h2 {
+  margin: 0 0 10px;
+}
+
+.div-informacoes p {
+  margin: 0;
 }
 </style>
