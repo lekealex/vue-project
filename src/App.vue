@@ -110,6 +110,15 @@ form{
 
 h2 {
   margin-top: 0;
+  color:black
+}
+
+h1 {
+ color: black;
+}
+
+label {
+  color: black;
 }
 
 .campo-formulario {
